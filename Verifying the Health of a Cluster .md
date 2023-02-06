@@ -1,11 +1,8 @@
-# Openshift
-Cheat sheet 
-```
+# Openshift Verifying the Health of a Cluster 
+ ```
 $source<(oc completion bash)
 oc whoami --show-console
 ```
-Verifying the Health of a Cluster 
-
 Displays a column with the status of each node. If a node is not Ready, then it cannot communicate with the OpenShift control plane, and is effectively dead to the cluster:
 ```bash
 oc get nodes 

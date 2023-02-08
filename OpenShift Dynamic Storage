@@ -1,1 +1,10 @@
 OpenShift Dynamic Storage
+
+### What is persistent storage
+Persistent storage refers to data storage that remains available even after the device or system that created or stored the data has been turned off or restarted. Examples of persistent storage include hard disk drives (HDD), solid-state drives (SSD), and USB flash drives. These types of storage retain the data even when the power is turned off, in contrast to volatile storage such as random access memory (RAM), which loses its contents when the power is disrupted.
+
+### What is persistent volume claim.
+A Persistent Volume Claim (PVC) is a request for storage made by a user in a Kubernetes cluster. It allows a user to request a specific amount of storage from the cluster, which can then be dynamically provisioned and bound to a Persistent Volume (PV). The PV is a physical resource that provides the actual storage, while the PVC represents the user's request for a portion of that storage. PVCs are used to ensure that a user's data is persistently stored even if the pod or node running the application fails. They provide an abstraction layer between the application and the underlying storage infrastructure, making it easier to manage and scale storage resources within a cluster.
+
+
+

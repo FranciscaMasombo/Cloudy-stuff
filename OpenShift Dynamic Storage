@@ -10,3 +10,12 @@ A Persistent Volume Claim (PVC) is a request for storage made by a user in a Kub
 Ephemeral storage refers to a type of non-persistent storage that is created and used temporarily and disappears when the instance or device that created it is shut down or restarted. Unlike persistent storage, data stored in ephemeral storage is not saved across reboots or when the instance is terminated. Examples of ephemeral storage include temporary storage or cache drives, RAM, and swap space. This type of storage is often used for temporary data storage in cloud computing and virtualized environments, where it can be provisioned dynamically and quickly as needed. Ephemeral storage is typically faster and less expensive than persistent storage, but its lack of persistence makes it unsuitable for critical data or applications that require long-term storage.
 
 
+Verifying the Dynamic Provisioned Storage:
+```
+oc get storageclass
+```
+Deploying Dynamically Provisioned Storage: create a PersistentVolumeClaim resource and add it to the application as a volume
+```
+oc set volumes deployment/example-application --add --name example-pv-storage --type pvc --claim-class nfs-storage --claim-mode rwo --claim-size 15Gi --mount-path /var/lib/example-app --claim-name example-pv-claim
+```
+Deleting Persistent Volume Claims:
